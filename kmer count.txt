@@ -1,0 +1,50 @@
+# kmer count
+
+def kmer(dna,kmersize=2,minifreq=2):
+
+    if len(dna)<kmersize:
+
+        return "warning: Length of sequence < kmer's size"
+
+    print("processing sequence:",dna,";kmer's size =",kmersize,";frequency =",minifreq)
+
+    kmer=[]
+
+    for i in range(0,len(dna)):
+
+        kmer=kmer+[(dna)[i:i+kmersize]]
+
+    final=list(set(kmer))
+
+    output=[]
+
+    for item in final:
+
+        if kmer.count(item)>minifreq:
+
+            output.append(item.upper()+"'s number is: "+str(kmer.count(item)))
+
+    return print(output)
+
+
+
+
+
+
+#ask user to input
+
+inputdna=input("sequence: \n\t").upper()
+
+inputkmersize=int(input("kmer's size: \n\t"))
+
+if inputkmersize<2 or inputkmersize>len(inputdna):
+
+    inputsize=2
+
+    print("warning")
+
+inputminifreq = int(input("minimum kmer ferquency: \n\t"))
+
+outputstuff = kmer(dna=inputdna,kmersize=inputkmersize,minifreq=inputminifreq)
+
+print(outputstuff)

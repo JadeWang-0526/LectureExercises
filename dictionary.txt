@@ -1,0 +1,46 @@
+#DICTIONARY
+
+
+def details(name,age,colour,python,world):
+
+    import string
+
+    for character in name:
+
+        if str(type(character))!='string':
+
+            return print('please import your name in string format again')
+
+        if age>99 or age<10:
+
+            return print('please import your real age again')
+
+        if colour.upper()=="PURPLE":
+
+            print('that is my favorite colour tooooo!')
+
+        if python.upper()=="YES":
+
+            print('cool choice')
+
+        if world.upper()=="yes":
+
+            print('unfortunately it is not')
+
+        return print('OK, done for you')
+
+
+table={}
+
+table['name']=input('What is your name?\n\t')
+
+table['age']=input('How old are you?\n\t')
+
+table['colour']=input('What is your favourite colour?\n\t')
+
+table['pthyon']=input('Do you like Python-in YES or NO\n\t')
+
+table['world']=input('Is the world flat?-in TRUE or FALSE\n\t')
+
+
+details(table['name'],table['age'],table['colour'],table['python'],table['world'])
